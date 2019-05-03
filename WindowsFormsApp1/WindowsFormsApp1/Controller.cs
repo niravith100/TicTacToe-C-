@@ -1,6 +1,6 @@
 ﻿namespace View
 {
-    internal class Controller
+    public class Controller
     {
         private Model model;
 

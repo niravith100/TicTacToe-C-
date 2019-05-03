@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using View;
 
-namespace WindowsFormsApp1
+namespace View
 {
     static class Program
     {
@@ -17,7 +17,12 @@ namespace WindowsFormsApp1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SpelPlanNedreDel());
+
+            Model model = new Model();
+            Controller controller = new Controller(model);
+            View view = new View(controller);
+
+            Application.Run(new View());
         }
     }
 }
