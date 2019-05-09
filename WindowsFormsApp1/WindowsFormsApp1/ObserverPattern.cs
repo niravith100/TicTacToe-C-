@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace View
 {
-        public interface IObservable
+        public interface IObserver
         {
             void Update(object Model);
         }
         public class Observable
         {
-            List<IObservable> observers = new List<IObservable>();
+            List<IObserver> observers = new List<IObserver>();
             bool changed = false;
             protected void SetChanged()
             {
@@ -22,12 +22,12 @@ namespace View
             {
                 if (changed)
                 {
-                    foreach (IObservable observer in observers)
+                    foreach (IObserver observer in observers)
                         observer.Update(this);
                 }
                 changed = false;
             }
-            public void AddObserver(IObservable observer)
+            public void AddObserver(IObserver observer)
             {
                 observers.Add(observer);
             }

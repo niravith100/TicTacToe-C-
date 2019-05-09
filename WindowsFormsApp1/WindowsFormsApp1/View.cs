@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace View
 {
-    public partial class View : Form, IObservable
+    public partial class View : Form, IObserver
     {
         private Controller controller;
         private string player1;
@@ -82,9 +82,9 @@ namespace View
 
         }
 
-        public void Update(object arg0, Object arg1)
+         void IObserver.Update(object Model)
         {
-            Model model = (Model) arg0;
+            Model model = (Model)Model;
             int[] SpelPlan = model.GetSpelplan();
           
             for(int i = 0; i <9; i++)
