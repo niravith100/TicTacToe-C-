@@ -117,7 +117,7 @@ namespace View
 
         public void SetStart(bool s)
         {
-            start = s; 
+            start = s; // Kommentar 
         }
     } 
 }
