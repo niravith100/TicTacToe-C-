@@ -9,6 +9,7 @@ namespace View
         int winner = 0;
         int rounds = 0;
         public bool start = false;
+        
 
         public Model()
         {
@@ -16,19 +17,19 @@ namespace View
 
         }
 
-        public void makeMove(int i)
+        public void MakeMove(int i)
         {
             spelplan[i] = player;
 
             if (player == 1)
             {
-                player = 2;
-                
+                player = 2; 
             }
 
             else if (player == 2)
             {
                 player = 1;
+                
             }
 
             rounds++;
@@ -36,7 +37,7 @@ namespace View
             {
                 winner = 0;
             }
-
+            
             CheckWinner();
             SetChanged();
             NotifyObservers();

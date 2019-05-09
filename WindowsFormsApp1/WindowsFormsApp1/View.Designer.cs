@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.RestartButton = new System.Windows.Forms.Button();
+            this.TurnLable = new System.Windows.Forms.Label();
             this.TicTacToeKnappar = new System.Windows.Forms.TableLayoutPanel();
             this.SpelKnapp1 = new System.Windows.Forms.Button();
             this.SpelKnapp2 = new System.Windows.Forms.Button();
@@ -39,12 +42,9 @@
             this.SpelKnapp7 = new System.Windows.Forms.Button();
             this.SpelKnapp8 = new System.Windows.Forms.Button();
             this.SpelKnapp9 = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.RestartButton = new System.Windows.Forms.Button();
-            this.TurnLable = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.TicTacToeKnappar.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.TicTacToeKnappar.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -57,6 +57,43 @@
             this.panel1.Size = new System.Drawing.Size(1221, 876);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.RestartButton, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.TurnLable, 1, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 656);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1221, 220);
+            this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // RestartButton
+            // 
+            this.RestartButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RestartButton.Location = new System.Drawing.Point(3, 3);
+            this.RestartButton.Name = "RestartButton";
+            this.RestartButton.Size = new System.Drawing.Size(604, 214);
+            this.RestartButton.TabIndex = 0;
+            this.RestartButton.Text = "Restart";
+            this.RestartButton.UseVisualStyleBackColor = true;
+            // 
+            // TurnLable
+            // 
+            this.TurnLable.AutoSize = true;
+            this.TurnLable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TurnLable.Location = new System.Drawing.Point(613, 0);
+            this.TurnLable.Name = "TurnLable";
+            this.TurnLable.Size = new System.Drawing.Size(605, 220);
+            this.TurnLable.TabIndex = 1;
+            this.TurnLable.Text = "Turn: ";
+            this.TurnLable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TurnLable.Click += new System.EventHandler(this.TurnLable_Click);
             // 
             // TicTacToeKnappar
             // 
@@ -169,57 +206,21 @@
             this.SpelKnapp9.Size = new System.Drawing.Size(402, 214);
             this.SpelKnapp9.TabIndex = 8;
             this.SpelKnapp9.UseVisualStyleBackColor = true;
+            this.SpelKnapp9.Click += new System.EventHandler(this.SpelKnapp9_Click);
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.RestartButton, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.TurnLable, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 656);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1221, 220);
-            this.tableLayoutPanel1.TabIndex = 1;
-            // 
-            // RestartButton
-            // 
-            this.RestartButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RestartButton.Location = new System.Drawing.Point(3, 3);
-            this.RestartButton.Name = "RestartButton";
-            this.RestartButton.Size = new System.Drawing.Size(604, 214);
-            this.RestartButton.TabIndex = 0;
-            this.RestartButton.Text = "Restart";
-            this.RestartButton.UseVisualStyleBackColor = true;
-            // 
-            // TurnLable
-            // 
-            this.TurnLable.AutoSize = true;
-            this.TurnLable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TurnLable.Location = new System.Drawing.Point(613, 0);
-            this.TurnLable.Name = "TurnLable";
-            this.TurnLable.Size = new System.Drawing.Size(605, 220);
-            this.TurnLable.TabIndex = 1;
-            this.TurnLable.Text = "Turn: ";
-            this.TurnLable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.TurnLable.Click += new System.EventHandler(this.TurnLable_Click);
-            // 
-            // SpelPlanNedreDel
+            // View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1221, 876);
             this.Controls.Add(this.panel1);
-            this.Name = "SpelPlanNedreDel";
+            this.Name = "View";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.SpelPlanNedreDel_Load);
             this.panel1.ResumeLayout(false);
-            this.TicTacToeKnappar.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.TicTacToeKnappar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
