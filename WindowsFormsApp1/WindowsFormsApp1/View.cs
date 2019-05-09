@@ -34,7 +34,6 @@ namespace View
 
         public View()
         {
-            
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -110,12 +109,30 @@ namespace View
                 }
 
             }
+            int winner = model.GetWinner();
+            if (winner == 1)
+            {
+                //SKRIV HÄRRRRRR
+            }
+
+            /*if(RestartButton == )
+            {
+                model.RestartGame();
+            }
             
-        }
+        }  */  
+
+        
 
         private void SpelKnapp9_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void RestartButton_Click(object sender, EventArgs e)
+        {
+           // Model model = (Model)Model;
+            //model.RestartGame();
         }
     }
 }
