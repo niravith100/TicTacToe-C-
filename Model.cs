@@ -11,6 +11,9 @@ namespace View
         public bool start = false;
         
 
+        
+        
+
         public Model()
         {
             spelplan = new int[9];
@@ -92,7 +95,7 @@ namespace View
             return spelplan;
         }
 
-        public void RestartGame()
+        public void  RestartGame()
         {
             for(int i = 0; i < 9; i++)
             {
