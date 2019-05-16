@@ -9,7 +9,8 @@ namespace View
         public interface IObserver
         {
             void Update(object Model);
-        }
+        void Update(object Model, object e);
+    }
         public class Observable
         {
             List<IObserver> observers = new List<IObserver>();

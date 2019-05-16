@@ -13,5 +13,14 @@
         {
             model.MakeMove(pos);
         }
+
+       public void restartGame(){
+
+            model.RestartGame();
+        }
+
+
     }
+    
+    
 }

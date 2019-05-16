@@ -122,5 +122,10 @@ namespace View
         {
             start = s; 
         }
+
+        public int getPlayer()
+        {
+            return player;
+        }
     } 
 }

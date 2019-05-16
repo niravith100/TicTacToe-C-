@@ -40,10 +40,10 @@ namespace View
            **/
         }
 
-      public View()
+        public View()
         {
-          InitializeComponent();
-       }
+            InitializeComponent();
+        }
 
         private void spelknapp_Click(object sender, EventArgs e)
         {
@@ -51,96 +51,106 @@ namespace View
             Controller.makeMove(int.Parse(command));
         }
 
-        void IObserver.Update(object Model)
-        {
-            Model model = (Model)Model;
-            int[] SpelPlan = model.GetSpelplan();
-
-            for (int i = 0; i < 9; i++)
+        void IObserver.Update(object Model) {
             {
-                if (SpelPlan[i] == 1)
+                Model model = (Model)Model;
+                int[] SpelPlan = model.GetSpelplan();
+                int player = model.getPlayer();
+                if(player == 1)
                 {
-                    SpelKnapp[i].Text = "X";
-                    TurnLable.Text = "It's " + player1 + "turn";
-                    SpelKnapp[i].Enabled = false;
+                    TurnLable.Text = "it's " + player1 + "turn";
                 }
-
-                else if (SpelPlan[i] == 2)
+                 else if(player == 2)
                 {
-                    SpelKnapp[i].Text = "O";
-                    TurnLable.Text = "It's " + player2 + "turn";
-                    SpelKnapp[i].Enabled = false;
+                    TurnLable.Text = "it's " + player2 + "turn";
                 }
-
-                else if (SpelPlan[i] == 0)
+                for (int i = 0; i < 9; i++)
                 {
-                    SpelKnapp[i].Text = " ";
-                   
-                }
-
-            }
-            int winner = model.GetWinner();
-            if (winner == 1)
-            {
-                String message = "Play1 =" + player1 + "Won! Do you want to restart the game?";
-                String title = "Restart";
-                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                DialogResult result = MessageBox.Show(message, title, buttons);
-                if (result == DialogResult.Yes)
-                {
-                    model.RestartGame();
-                    for (int j = 0; j < 9; j++)
+                    if (SpelPlan[i] == 1)
                     {
-                        SpelKnapp[j].Text = " ";
-                        SpelKnapp[j].Enabled = true;
+                        SpelKnapp[i].Text = "X";
+                        SpelKnapp[i].Enabled = false;
+                    }
+
+                    else if (SpelPlan[i] == 2)
+                    {
+                        SpelKnapp[i].Text = "O";
+                        SpelKnapp[i].Enabled = false;
+                    }
+
+                    else if (SpelPlan[i] == 0)
+                    {
+                        SpelKnapp[i].Text = " ";
+                        SpelKnapp[i].Enabled = true;
+
+                    }
+
+                }
+                int winner = model.GetWinner();
+                if (winner == 1)
+                {
+                    String message = "Play1 =" + player1 + "Won! Do you want to restart the game?";
+                    String title = "Restart";
+                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                    DialogResult result = MessageBox.Show(message, title, buttons);
+                    if (result == DialogResult.Yes)
+                    {
+                        model.RestartGame();
+                        for (int j = 0; j < 9; j++)
+                        {
+                            SpelKnapp[j].Text = " ";
+                            SpelKnapp[j].Enabled = true;
+                        }
+                    }
+                    else
+                    {
+                        // Do nothing
                     }
                 }
-                else
-                {
-                    // Do nothing
-                }
-            }
 
-            if (winner == 2)
-            {
-
-                String message = " player2 = " + player2 + "Won! Do you want to restart the game?";
-                String title = "Restart";
-                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                DialogResult result = MessageBox.Show(message, title, buttons);
-                if (result == DialogResult.Yes)
+                if (winner == 2)
                 {
-                    model.RestartGame();
-                    for (int j = 0; j < 9; j++)
+
+                    String message = " player2 = " + player2 + "Won! Do you want to restart the game?";
+                    String title = "Restart";
+                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                    DialogResult result = MessageBox.Show(message, title, buttons);
+                    if (result == DialogResult.Yes)
                     {
-                        SpelKnapp[j].Text = " ";
-                        SpelKnapp[j].Enabled = true;
+                        model.RestartGame();
+                        for (int j = 0; j < 9; j++)
+                        {
+                            SpelKnapp[j].Text = " ";
+                            SpelKnapp[j].Enabled = true;
+                        }
+                    }
+                    else
+                    {
+                        // Do nothing
                     }
                 }
-                else
-                {
-                    // Do nothing
-                }
-            }
 
 
-            else if (winner == 3)
-            {
-                String message ="It's a Draw! Do you want to restart the game?";
-                String title = "Restart";
-                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                DialogResult result = MessageBox.Show(message, title, buttons);
-                if (result == DialogResult.Yes)
+                else if (winner == 3)
                 {
-                    model.RestartGame();
-                    for (int j = 0; j < 9; j++)
+                    String message = "It's a Draw! Do you want to restart the game?";
+                    String title = "Restart";
+                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                    DialogResult result = MessageBox.Show(message, title, buttons);
+                    if (result == DialogResult.Yes)
                     {
-                        SpelKnapp[j].Text = " ";
-                        SpelKnapp[j].Enabled = true;
+                        model.RestartGame();
+                        for (int j = 0; j < 9; j++)
+                        {
+                            SpelKnapp[j].Text = " ";
+                            SpelKnapp[j].Enabled = true;
+                        }
                     }
                 }
+
+
+
             }
-            
 
 
         }
@@ -155,10 +165,6 @@ namespace View
 
         }
 
-        private void RestartButton_Click(object sender, object Model,  EventArgs e)
-        {
-            
-        }
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -167,7 +173,7 @@ namespace View
 
         private void textBoxPlayer1_TextChanged(object sender, EventArgs e)
         {
-            player1 = textBoxPlayer1.Text+ " ";
+            player1 = textBoxPlayer1.Text + " ";
         }
 
         private void textBoxPlayer2_TextChanged(object sender, EventArgs e)
@@ -179,5 +185,16 @@ namespace View
         {
 
         }
+
+        void IObserver.Update(object Model, object e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void RestartButton_Click(object sender, EventArgs e)
+        {
+            Controller.restartGame();
+        }
     }
+
 }

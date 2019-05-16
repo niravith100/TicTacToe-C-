@@ -45,10 +45,10 @@ namespace View
             this.SpelKnapp7 = new System.Windows.Forms.Button();
             this.SpelKnapp2 = new System.Windows.Forms.Button();
             this.SpelKnapp5 = new System.Windows.Forms.Button();
+            this.SpelKnapp8 = new System.Windows.Forms.Button();
             this.SpelKnapp3 = new System.Windows.Forms.Button();
             this.SpelKnapp6 = new System.Windows.Forms.Button();
             this.SpelKnapp9 = new System.Windows.Forms.Button();
-            this.SpelKnapp8 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.TurnLabel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -94,6 +94,7 @@ namespace View
             this.RestartButton.TabIndex = 0;
             this.RestartButton.Text = "Restart";
             this.RestartButton.UseVisualStyleBackColor = false;
+            this.RestartButton.Click += new System.EventHandler(this.RestartButton_Click);
             // 
             // TurnLable
             // 
@@ -254,6 +255,19 @@ namespace View
             this.SpelKnapp5.UseVisualStyleBackColor = false;
             this.SpelKnapp5.Click += new System.EventHandler(this.spelknapp_Click);
             // 
+            // SpelKnapp8
+            // 
+            this.SpelKnapp8.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.SpelKnapp8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SpelKnapp8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SpelKnapp8.Location = new System.Drawing.Point(393, 443);
+            this.SpelKnapp8.Name = "SpelKnapp8";
+            this.SpelKnapp8.Size = new System.Drawing.Size(384, 215);
+            this.SpelKnapp8.TabIndex = 5;
+            this.SpelKnapp8.Tag = "7";
+            this.SpelKnapp8.UseVisualStyleBackColor = false;
+            this.SpelKnapp8.Click += new System.EventHandler(this.spelknapp_Click);
+            // 
             // SpelKnapp3
             // 
             this.SpelKnapp3.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -292,19 +306,6 @@ namespace View
             this.SpelKnapp9.Tag = "8";
             this.SpelKnapp9.UseVisualStyleBackColor = false;
             this.SpelKnapp9.Click += new System.EventHandler(this.spelknapp_Click);
-            // 
-            // SpelKnapp8
-            // 
-            this.SpelKnapp8.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.SpelKnapp8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SpelKnapp8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SpelKnapp8.Location = new System.Drawing.Point(393, 443);
-            this.SpelKnapp8.Name = "SpelKnapp8";
-            this.SpelKnapp8.Size = new System.Drawing.Size(384, 215);
-            this.SpelKnapp8.TabIndex = 5;
-            this.SpelKnapp8.Tag = "7";
-            this.SpelKnapp8.UseVisualStyleBackColor = false;
-            this.SpelKnapp8.Click += new System.EventHandler(this.spelknapp_Click);
             // 
             // View
             // 
